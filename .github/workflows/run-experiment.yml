@@ -1,0 +1,35 @@
+name: Run Experiment
+
+on: push
+jobs:
+  deploy-runner:
+    if: github.actor == 'iterative-studio-local[bot]'
+    environment: cloud
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: iterative/setup-cml@v1
+      - uses: iterative/setup-dvc@v1
+      - name: Training
+        env:
+          REPO_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        run: |
+          # Setup project
+          pip install -r requirements.txt
+
+          cml ci --fetch-depth 0
+
+          dvc exp run --pull --allow-missing
+
+          dvc push
+
+          cml pr --squash --skip-ci .
+
+          echo "## Metrics" >> report.md
+          dvc metrics diff main --md >> report.md
+          echo "## Params" >> report.md
+          dvc params diff main --md >> report.md
+
+          cml comment create --pr report.md
