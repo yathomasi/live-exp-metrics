@@ -30,3 +30,18 @@ stages:
       md5: a413ed6d42eede55954c8249ee739e0f.dir
       size: 687
       nfiles: 6
+  system-os:
+    cmd: python system.py
+    params:
+      params.yaml:
+        epochs: 5
+    outs:
+    - path: system/metrics.json
+      hash: md5
+      md5: 3a7e30b0e3b04bb18be8dccb251a453f
+      size: 114
+    - path: system/plots
+      hash: md5
+      md5: 1676eba2572e7a52bc8ed838124b569a.dir
+      size: 339
+      nfiles: 3

@@ -20,3 +20,14 @@ stages:
     metrics:
       - usage/metrics.json:
           cache: false
+
+  system-os:
+    cmd: python system.py
+    params:
+      - epochs
+    plots:
+      - system/plots:
+          cache: false
+    metrics:
+      - system/metrics.json:
+          cache: false

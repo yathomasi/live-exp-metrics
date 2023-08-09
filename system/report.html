@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content="5">
+    <title>DVC Plot</title>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.18.2"></script>
+    
+    <style>
+        table {
+            border-spacing: 15px;
+        }
+    </style>
+</head>
+<body>
+    
+        <div id="metrics_json" style="text-align: center; padding: 10x">
+            <p>metrics_json</p>
+            <div style="display: flex;justify-content: center;">
+                <table>
+<thead>
+<tr><th style="text-align: right;">  linux</th><th style="text-align: right;">  windows</th><th style="text-align: right;">   mac</th><th style="text-align: right;">  step</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;">4.30366</td><td style="text-align: right;">  4.26281</td><td style="text-align: right;">4.3006</td><td style="text-align: right;">     4</td></tr>
+</tbody>
+</table>
+            </div>
+        </div>
+
+    <div id = "static_linux">
+        <script type = "text/javascript">
+            var spec = {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "data": {"values": [{"step": "0", "linux": "0.6713752252017213", "rev": "workspace"}, {"step": "1", "linux": "1.453471242939436", "rev": "workspace"}, {"step": "2", "linux": "2.3721609181900507", "rev": "workspace"}, {"step": "3", "linux": "3.228609045226097", "rev": "workspace"}, {"step": "4", "linux": "4.303657677048175", "rev": "workspace"}]}, "title": "linux", "width": 300, "height": 300, "params": [{"name": "smooth", "value": 0.001, "bind": {"input": "range", "min": 0.001, "max": 1, "step": 0.001}}], "layer": [{"mark": "line", "encoding": {"x": {"field": "step", "type": "quantitative", "title": "step"}, "y": {"field": "linux", "type": "quantitative", "title": "linux", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}, "tooltip": [{"field": "step", "title": "step", "type": "quantitative"}, {"field": "linux", "title": "linux", "type": "quantitative"}]}, "transform": [{"loess": "linux", "on": "step", "groupby": ["rev", "filename", "field", "filename::field"], "bandwidth": {"signal": "smooth"}}]}, {"mark": {"type": "line", "opacity": 0.2}, "encoding": {"x": {"field": "step", "type": "quantitative", "title": "step"}, "y": {"field": "linux", "type": "quantitative", "title": "linux", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}, "tooltip": [{"field": "step", "title": "step", "type": "quantitative"}, {"field": "linux", "title": "linux", "type": "quantitative"}]}}, {"mark": {"type": "circle", "size": 10, "tooltip": {"content": "encoding"}}, "encoding": {"x": {"aggregate": "max", "field": "step", "type": "quantitative", "title": "step"}, "y": {"aggregate": {"argmax": "step"}, "field": "linux", "type": "quantitative", "title": "linux", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}}}]};
+            vegaEmbed('#static_linux', spec);
+        </script>
+    </div>
+    
+
+    <div id = "static_mac">
+        <script type = "text/javascript">
+            var spec = {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "data": {"values": [{"step": "0", "mac": "0.5015519782425288", "rev": "workspace"}, {"step": "1", "mac": "1.9215936265427036", "rev": "workspace"}, {"step": "2", "mac": "2.0296308806565175", "rev": "workspace"}, {"step": "3", "mac": "3.0929671212629404", "rev": "workspace"}, {"step": "4", "mac": "4.300595677202151", "rev": "workspace"}]}, "title": "mac", "width": 300, "height": 300, "params": [{"name": "smooth", "value": 0.001, "bind": {"input": "range", "min": 0.001, "max": 1, "step": 0.001}}], "layer": [{"mark": "line", "encoding": {"x": {"field": "step", "type": "quantitative", "title": "step"}, "y": {"field": "mac", "type": "quantitative", "title": "mac", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}, "tooltip": [{"field": "step", "title": "step", "type": "quantitative"}, {"field": "mac", "title": "mac", "type": "quantitative"}]}, "transform": [{"loess": "mac", "on": "step", "groupby": ["rev", "filename", "field", "filename::field"], "bandwidth": {"signal": "smooth"}}]}, {"mark": {"type": "line", "opacity": 0.2}, "encoding": {"x": {"field": "step", "type": "quantitative", "title": "step"}, "y": {"field": "mac", "type": "quantitative", "title": "mac", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}, "tooltip": [{"field": "step", "title": "step", "type": "quantitative"}, {"field": "mac", "title": "mac", "type": "quantitative"}]}}, {"mark": {"type": "circle", "size": 10, "tooltip": {"content": "encoding"}}, "encoding": {"x": {"aggregate": "max", "field": "step", "type": "quantitative", "title": "step"}, "y": {"aggregate": {"argmax": "step"}, "field": "mac", "type": "quantitative", "title": "mac", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}}}]};
+            vegaEmbed('#static_mac', spec);
+        </script>
+    </div>
+    
+
+    <div id = "static_windows">
+        <script type = "text/javascript">
+            var spec = {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "data": {"values": [{"step": "0", "windows": "0.7838093289569008", "rev": "workspace"}, {"step": "1", "windows": "1.59834376366511", "rev": "workspace"}, {"step": "2", "windows": "2.305964214854435", "rev": "workspace"}, {"step": "3", "windows": "3.246565503022114", "rev": "workspace"}, {"step": "4", "windows": "4.262806738369422", "rev": "workspace"}]}, "title": "windows", "width": 300, "height": 300, "params": [{"name": "smooth", "value": 0.001, "bind": {"input": "range", "min": 0.001, "max": 1, "step": 0.001}}], "layer": [{"mark": "line", "encoding": {"x": {"field": "step", "type": "quantitative", "title": "step"}, "y": {"field": "windows", "type": "quantitative", "title": "windows", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}, "tooltip": [{"field": "step", "title": "step", "type": "quantitative"}, {"field": "windows", "title": "windows", "type": "quantitative"}]}, "transform": [{"loess": "windows", "on": "step", "groupby": ["rev", "filename", "field", "filename::field"], "bandwidth": {"signal": "smooth"}}]}, {"mark": {"type": "line", "opacity": 0.2}, "encoding": {"x": {"field": "step", "type": "quantitative", "title": "step"}, "y": {"field": "windows", "type": "quantitative", "title": "windows", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}, "tooltip": [{"field": "step", "title": "step", "type": "quantitative"}, {"field": "windows", "title": "windows", "type": "quantitative"}]}}, {"mark": {"type": "circle", "size": 10, "tooltip": {"content": "encoding"}}, "encoding": {"x": {"aggregate": "max", "field": "step", "type": "quantitative", "title": "step"}, "y": {"aggregate": {"argmax": "step"}, "field": "windows", "type": "quantitative", "title": "windows", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}}}]};
+            vegaEmbed('#static_windows', spec);
+        </script>
+    </div>
+    
+</body>
+</html>
