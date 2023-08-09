@@ -7,9 +7,11 @@ stages:
         epochs: 5
     outs:
     - path: dvclive/metrics.json
-      md5: 743558f35763a345122b4021ff3aa918
+      hash: md5
+      md5: f7076ba148fa1178d58fcd81cd406f81
       size: 78
     - path: dvclive/plots
-      md5: e698813dc97cc66da23279c08ad4a655.dir
-      size: 221
+      hash: md5
+      md5: 34797a23ff4eb979242f968d743db2ab.dir
+      size: 222
       nfiles: 2

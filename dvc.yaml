@@ -9,7 +9,3 @@ stages:
     metrics:
       - dvclive/metrics.json:
           cache: false
-      - usage/commands.json:
-          cache: false
-      - usage/newfile.json:
-          cache: false
