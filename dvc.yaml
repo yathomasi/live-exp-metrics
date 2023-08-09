@@ -9,3 +9,14 @@ stages:
     metrics:
       - dvclive/metrics.json:
           cache: false
+
+  usage-commands:
+    cmd: python commands.py
+    params:
+      - epochs
+    plots:
+      - usage/plots:
+          cache: false
+    metrics:
+      - usage/metrics.json:
+          cache: false
