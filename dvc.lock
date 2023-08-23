@@ -50,18 +50,18 @@ stages:
     deps:
     - path: hello.py
       hash: md5
-      md5: e09eccd4dc89546e4d519f320bf9db82
-      size: 365
+      md5: 876b07875b2d06381d78e89949ff2ad2
+      size: 375
     params:
       params.yaml:
         epochs: 5
     outs:
-    - path: new/model/config/trainer/params/metrics.json
+    - path: new/model/config/trainer/optimizer/params/metrics.json
       hash: md5
-      md5: 9404e9b1efb827f6cbcaf407e9c996e3
+      md5: cbcd92e6d4c2be0faa8956d5f33afcee
       size: 82
-    - path: new/model/config/trainer/params/plots
+    - path: new/model/config/trainer/optimizer/params/plots
       hash: md5
-      md5: 0502a5558b650fb09d15a3e843f72c29.dir
-      size: 230
+      md5: aa062846577e17687016065fc7126f76.dir
+      size: 231
       nfiles: 2

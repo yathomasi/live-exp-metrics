@@ -38,8 +38,8 @@ stages:
       params:
         - epochs
       plots:
-        - new/model/config/trainer/params/plots:
+        - new/model/config/trainer/optimizer/params/plots:
             cache: false
       metrics:
-        - new/model/config/trainer/params/metrics.json:
+        - new/model/config/trainer/optimizer/params/metrics.json:
             cache: false
