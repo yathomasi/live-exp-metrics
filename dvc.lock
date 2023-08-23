@@ -45,3 +45,23 @@ stages:
       md5: 1676eba2572e7a52bc8ed838124b569a.dir
       size: 339
       nfiles: 3
+  hello:
+    cmd: python hello.py
+    deps:
+    - path: hello.py
+      hash: md5
+      md5: 3b820e8f7f1cb6ec3d5573bbbbb7c19f
+      size: 341
+    params:
+      params.yaml:
+        epochs: 5
+    outs:
+    - path: hello/world/metrics.json
+      hash: md5
+      md5: 31b8ef527fd4b1cce18f7490d5a7c159
+      size: 78
+    - path: hello/world/plots
+      hash: md5
+      md5: ffd319758f2097d068a83093aacaf768.dir
+      size: 221
+      nfiles: 2

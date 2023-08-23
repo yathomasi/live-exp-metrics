@@ -31,3 +31,15 @@ stages:
     metrics:
       - system/metrics.json:
           cache: false
+  hello:
+      cmd: python hello.py
+      deps:
+        - hello.py
+      params:
+        - epochs
+      plots:
+        - hello/world/plots:
+            cache: false
+      metrics:
+        - hello/world/metrics.json:
+            cache: false
