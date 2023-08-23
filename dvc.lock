@@ -50,18 +50,18 @@ stages:
     deps:
     - path: hello.py
       hash: md5
-      md5: 3b820e8f7f1cb6ec3d5573bbbbb7c19f
+      md5: 6ec5ba21822f592b359dd838f1ba341a
       size: 341
     params:
       params.yaml:
         epochs: 5
     outs:
-    - path: hello/world/metrics.json
+    - path: hello/usage/metrics.json
       hash: md5
-      md5: 31b8ef527fd4b1cce18f7490d5a7c159
+      md5: de50e722d4588bf28cca3e41a0f2bdd4
       size: 78
-    - path: hello/world/plots
+    - path: hello/usage/plots
       hash: md5
-      md5: ffd319758f2097d068a83093aacaf768.dir
-      size: 221
+      md5: 9ef14e80d9e6dc1bae25a19350a765b6.dir
+      size: 225
       nfiles: 2

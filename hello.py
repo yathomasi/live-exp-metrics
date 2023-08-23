@@ -6,7 +6,7 @@ from dvclive import Live
 
 params = dvc.api.params_show()
 
-with Live(dir="hello/world") as live:
+with Live(dir="hello/usage") as live:
     for i in range(params["epochs"]):
         live.log_metric("bar", i + random.random())
         live.log_metric("foo", i + random.random())

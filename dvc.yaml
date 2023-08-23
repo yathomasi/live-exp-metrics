@@ -38,8 +38,8 @@ stages:
       params:
         - epochs
       plots:
-        - hello/world/plots:
+        - hello/usage/plots:
             cache: false
       metrics:
-        - hello/world/metrics.json:
+        - hello/usage/metrics.json:
             cache: false
