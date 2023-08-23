@@ -38,8 +38,8 @@ stages:
       params:
         - epochs
       plots:
-        - hello/usage/plots:
+        - new/model/config/trainer/params/plots:
             cache: false
       metrics:
-        - hello/usage/metrics.json:
+        - new/model/config/trainer/params/metrics.json:
             cache: false
