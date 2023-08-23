@@ -31,15 +31,15 @@ stages:
     metrics:
       - system/metrics.json:
           cache: false
-  hello:
-      cmd: python hello.py
+  exp:
+      cmd: python exp.py
       deps:
-        - hello.py
+        - exp.py
       params:
         - epochs
       plots:
-        - new/model/config/trainer/optimizer/params/plots:
+        - exp/plots:
             cache: false
       metrics:
-        - new/model/config/trainer/optimizer/params/metrics.json:
+        - exp/metrics.json:
             cache: false

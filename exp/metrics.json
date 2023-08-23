@@ -1,0 +1,20 @@
+{
+    "model": {
+        "name": 4.257849871904306,
+        "config": {
+            "trainer": {
+                "epochs": 4,
+                "batch_size": 4.869196744364517,
+                "learning_rate": 4.249291290632899
+            },
+            "optimizer": {
+                "name": 4.289007954539624,
+                "weights": {
+                    "decay": 4.375757094967639,
+                    "learning_rate": 4.490045997356167
+                }
+            }
+        }
+    },
+    "step": 4
+}

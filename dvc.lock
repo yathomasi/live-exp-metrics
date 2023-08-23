@@ -65,3 +65,23 @@ stages:
       md5: aa062846577e17687016065fc7126f76.dir
       size: 231
       nfiles: 2
+  exp:
+    cmd: python exp.py
+    deps:
+    - path: exp.py
+      hash: md5
+      md5: 76b3d01515c980079d495ac0a38ccaed
+      size: 764
+    params:
+      params.yaml:
+        epochs: 5
+    outs:
+    - path: exp/metrics.json
+      hash: md5
+      md5: 5fd25b4d77b7772e998097e4e9dd52d7
+      size: 508
+    - path: exp/plots
+      hash: md5
+      md5: a40717e5b2e00eb701aa89972aeaa9a6.dir
+      size: 742
+      nfiles: 7

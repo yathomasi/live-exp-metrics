@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content="5">
+    <title>DVC Plot</title>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.18.2"></script>
+    
+    <style>
+        table {
+            border-spacing: 15px;
+        }
+    </style>
+</head>
+<body>
+    
+        <div id="metrics_json" style="text-align: center; padding: 10x">
+            <p>metrics_json</p>
+            <div style="display: flex;justify-content: center;">
+                <table>
+<thead>
+<tr><th style="text-align: right;">  model.name</th><th style="text-align: right;">  model.config.trainer.epochs</th><th style="text-align: right;">  model.config.trainer.batch_size</th><th style="text-align: right;">  model.config.trainer.learning_rate</th><th style="text-align: right;">  model.config.optimizer.name</th><th style="text-align: right;">  model.config.optimizer.weights.decay</th><th style="text-align: right;">  model.config.optimizer.weights.learning_rate</th><th style="text-align: right;">  step</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;">     4.25785</td><td style="text-align: right;">                            4</td><td style="text-align: right;">                           4.8692</td><td style="text-align: right;">                             4.24929</td><td style="text-align: right;">                      4.28901</td><td style="text-align: right;">                               4.37576</td><td style="text-align: right;">                                       4.49005</td><td style="text-align: right;">     4</td></tr>
+</tbody>
+</table>
+            </div>
+        </div>
+
+    <div id = "static_model_name">
+        <script type = "text/javascript">
+            var spec = {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "data": {"values": [{"step": "0", "name": "0.22424216413114562", "rev": "workspace"}, {"step": "1", "name": "1.2429494190074575", "rev": "workspace"}, {"step": "2", "name": "2.4170868683376323", "rev": "workspace"}, {"step": "3", "name": "3.3850556031559047", "rev": "workspace"}, {"step": "4", "name": "4.257849871904306", "rev": "workspace"}]}, "title": "model/name", "width": 300, "height": 300, "params": [{"name": "smooth", "value": 0.001, "bind": {"input": "range", "min": 0.001, "max": 1, "step": 0.001}}], "layer": [{"mark": "line", "encoding": {"x": {"field": "step", "type": "quantitative", "title": "step"}, "y": {"field": "name", "type": "quantitative", "title": "name", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}, "tooltip": [{"field": "step", "title": "step", "type": "quantitative"}, {"field": "name", "title": "name", "type": "quantitative"}]}, "transform": [{"loess": "name", "on": "step", "groupby": ["rev", "filename", "field", "filename::field"], "bandwidth": {"signal": "smooth"}}]}, {"mark": {"type": "line", "opacity": 0.2}, "encoding": {"x": {"field": "step", "type": "quantitative", "title": "step"}, "y": {"field": "name", "type": "quantitative", "title": "name", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}, "tooltip": [{"field": "step", "title": "step", "type": "quantitative"}, {"field": "name", "title": "name", "type": "quantitative"}]}}, {"mark": {"type": "circle", "size": 10, "tooltip": {"content": "encoding"}}, "encoding": {"x": {"aggregate": "max", "field": "step", "type": "quantitative", "title": "step"}, "y": {"aggregate": {"argmax": "step"}, "field": "name", "type": "quantitative", "title": "name", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}}}]};
+            vegaEmbed('#static_model_name', spec);
+        </script>
+    </div>
+    
+
+    <div id = "static_model_config_optimizer_name">
+        <script type = "text/javascript">
+            var spec = {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "data": {"values": [{"step": "0", "name": "0.43669232961808013", "rev": "workspace"}, {"step": "1", "name": "1.166709382631699", "rev": "workspace"}, {"step": "2", "name": "2.419231199137644", "rev": "workspace"}, {"step": "3", "name": "3.0405182953060446", "rev": "workspace"}, {"step": "4", "name": "4.289007954539624", "rev": "workspace"}]}, "title": "model/config/optimizer/name", "width": 300, "height": 300, "params": [{"name": "smooth", "value": 0.001, "bind": {"input": "range", "min": 0.001, "max": 1, "step": 0.001}}], "layer": [{"mark": "line", "encoding": {"x": {"field": "step", "type": "quantitative", "title": "step"}, "y": {"field": "name", "type": "quantitative", "title": "name", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}, "tooltip": [{"field": "step", "title": "step", "type": "quantitative"}, {"field": "name", "title": "name", "type": "quantitative"}]}, "transform": [{"loess": "name", "on": "step", "groupby": ["rev", "filename", "field", "filename::field"], "bandwidth": {"signal": "smooth"}}]}, {"mark": {"type": "line", "opacity": 0.2}, "encoding": {"x": {"field": "step", "type": "quantitative", "title": "step"}, "y": {"field": "name", "type": "quantitative", "title": "name", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}, "tooltip": [{"field": "step", "title": "step", "type": "quantitative"}, {"field": "name", "title": "name", "type": "quantitative"}]}}, {"mark": {"type": "circle", "size": 10, "tooltip": {"content": "encoding"}}, "encoding": {"x": {"aggregate": "max", "field": "step", "type": "quantitative", "title": "step"}, "y": {"aggregate": {"argmax": "step"}, "field": "name", "type": "quantitative", "title": "name", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}}}]};
+            vegaEmbed('#static_model_config_optimizer_name', spec);
+        </script>
+    </div>
+    
+
+    <div id = "static_model_config_optimizer_weights_learning_rate">
+        <script type = "text/javascript">
+            var spec = {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "data": {"values": [{"step": "0", "learning_rate": "0.38756596239377417", "rev": "workspace"}, {"step": "1", "learning_rate": "1.6894891700953036", "rev": "workspace"}, {"step": "2", "learning_rate": "2.8343713133439907", "rev": "workspace"}, {"step": "3", "learning_rate": "3.2990897972339646", "rev": "workspace"}, {"step": "4", "learning_rate": "4.490045997356167", "rev": "workspace"}]}, "title": "model/config/optimizer/weights/learning_rate", "width": 300, "height": 300, "params": [{"name": "smooth", "value": 0.001, "bind": {"input": "range", "min": 0.001, "max": 1, "step": 0.001}}], "layer": [{"mark": "line", "encoding": {"x": {"field": "step", "type": "quantitative", "title": "step"}, "y": {"field": "learning_rate", "type": "quantitative", "title": "learning_rate", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}, "tooltip": [{"field": "step", "title": "step", "type": "quantitative"}, {"field": "learning_rate", "title": "learning_rate", "type": "quantitative"}]}, "transform": [{"loess": "learning_rate", "on": "step", "groupby": ["rev", "filename", "field", "filename::field"], "bandwidth": {"signal": "smooth"}}]}, {"mark": {"type": "line", "opacity": 0.2}, "encoding": {"x": {"field": "step", "type": "quantitative", "title": "step"}, "y": {"field": "learning_rate", "type": "quantitative", "title": "learning_rate", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}, "tooltip": [{"field": "step", "title": "step", "type": "quantitative"}, {"field": "learning_rate", "title": "learning_rate", "type": "quantitative"}]}}, {"mark": {"type": "circle", "size": 10, "tooltip": {"content": "encoding"}}, "encoding": {"x": {"aggregate": "max", "field": "step", "type": "quantitative", "title": "step"}, "y": {"aggregate": {"argmax": "step"}, "field": "learning_rate", "type": "quantitative", "title": "learning_rate", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}}}]};
+            vegaEmbed('#static_model_config_optimizer_weights_learning_rate', spec);
+        </script>
+    </div>
+    
+
+    <div id = "static_model_config_optimizer_weights_decay">
+        <script type = "text/javascript">
+            var spec = {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "data": {"values": [{"step": "0", "decay": "0.26487693615950814", "rev": "workspace"}, {"step": "1", "decay": "1.790567951323196", "rev": "workspace"}, {"step": "2", "decay": "2.6326030020211326", "rev": "workspace"}, {"step": "3", "decay": "3.5646318726733353", "rev": "workspace"}, {"step": "4", "decay": "4.375757094967639", "rev": "workspace"}]}, "title": "model/config/optimizer/weights/decay", "width": 300, "height": 300, "params": [{"name": "smooth", "value": 0.001, "bind": {"input": "range", "min": 0.001, "max": 1, "step": 0.001}}], "layer": [{"mark": "line", "encoding": {"x": {"field": "step", "type": "quantitative", "title": "step"}, "y": {"field": "decay", "type": "quantitative", "title": "decay", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}, "tooltip": [{"field": "step", "title": "step", "type": "quantitative"}, {"field": "decay", "title": "decay", "type": "quantitative"}]}, "transform": [{"loess": "decay", "on": "step", "groupby": ["rev", "filename", "field", "filename::field"], "bandwidth": {"signal": "smooth"}}]}, {"mark": {"type": "line", "opacity": 0.2}, "encoding": {"x": {"field": "step", "type": "quantitative", "title": "step"}, "y": {"field": "decay", "type": "quantitative", "title": "decay", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}, "tooltip": [{"field": "step", "title": "step", "type": "quantitative"}, {"field": "decay", "title": "decay", "type": "quantitative"}]}}, {"mark": {"type": "circle", "size": 10, "tooltip": {"content": "encoding"}}, "encoding": {"x": {"aggregate": "max", "field": "step", "type": "quantitative", "title": "step"}, "y": {"aggregate": {"argmax": "step"}, "field": "decay", "type": "quantitative", "title": "decay", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}}}]};
+            vegaEmbed('#static_model_config_optimizer_weights_decay', spec);
+        </script>
+    </div>
+    
+
+    <div id = "static_model_config_trainer_learning_rate">
+        <script type = "text/javascript">
+            var spec = {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "data": {"values": [{"step": "0", "learning_rate": "0.15072270386083209", "rev": "workspace"}, {"step": "1", "learning_rate": "1.5723138446429705", "rev": "workspace"}, {"step": "2", "learning_rate": "2.487273715442024", "rev": "workspace"}, {"step": "3", "learning_rate": "3.394379380610678", "rev": "workspace"}, {"step": "4", "learning_rate": "4.249291290632899", "rev": "workspace"}]}, "title": "model/config/trainer/learning_rate", "width": 300, "height": 300, "params": [{"name": "smooth", "value": 0.001, "bind": {"input": "range", "min": 0.001, "max": 1, "step": 0.001}}], "layer": [{"mark": "line", "encoding": {"x": {"field": "step", "type": "quantitative", "title": "step"}, "y": {"field": "learning_rate", "type": "quantitative", "title": "learning_rate", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}, "tooltip": [{"field": "step", "title": "step", "type": "quantitative"}, {"field": "learning_rate", "title": "learning_rate", "type": "quantitative"}]}, "transform": [{"loess": "learning_rate", "on": "step", "groupby": ["rev", "filename", "field", "filename::field"], "bandwidth": {"signal": "smooth"}}]}, {"mark": {"type": "line", "opacity": 0.2}, "encoding": {"x": {"field": "step", "type": "quantitative", "title": "step"}, "y": {"field": "learning_rate", "type": "quantitative", "title": "learning_rate", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}, "tooltip": [{"field": "step", "title": "step", "type": "quantitative"}, {"field": "learning_rate", "title": "learning_rate", "type": "quantitative"}]}}, {"mark": {"type": "circle", "size": 10, "tooltip": {"content": "encoding"}}, "encoding": {"x": {"aggregate": "max", "field": "step", "type": "quantitative", "title": "step"}, "y": {"aggregate": {"argmax": "step"}, "field": "learning_rate", "type": "quantitative", "title": "learning_rate", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}}}]};
+            vegaEmbed('#static_model_config_trainer_learning_rate', spec);
+        </script>
+    </div>
+    
+
+    <div id = "static_model_config_trainer_epochs">
+        <script type = "text/javascript">
+            var spec = {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "data": {"values": [{"step": "0", "epochs": "0", "rev": "workspace"}, {"step": "1", "epochs": "1", "rev": "workspace"}, {"step": "2", "epochs": "2", "rev": "workspace"}, {"step": "3", "epochs": "3", "rev": "workspace"}, {"step": "4", "epochs": "4", "rev": "workspace"}]}, "title": "model/config/trainer/epochs", "width": 300, "height": 300, "params": [{"name": "smooth", "value": 0.001, "bind": {"input": "range", "min": 0.001, "max": 1, "step": 0.001}}], "layer": [{"mark": "line", "encoding": {"x": {"field": "step", "type": "quantitative", "title": "step"}, "y": {"field": "epochs", "type": "quantitative", "title": "epochs", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}, "tooltip": [{"field": "step", "title": "step", "type": "quantitative"}, {"field": "epochs", "title": "epochs", "type": "quantitative"}]}, "transform": [{"loess": "epochs", "on": "step", "groupby": ["rev", "filename", "field", "filename::field"], "bandwidth": {"signal": "smooth"}}]}, {"mark": {"type": "line", "opacity": 0.2}, "encoding": {"x": {"field": "step", "type": "quantitative", "title": "step"}, "y": {"field": "epochs", "type": "quantitative", "title": "epochs", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}, "tooltip": [{"field": "step", "title": "step", "type": "quantitative"}, {"field": "epochs", "title": "epochs", "type": "quantitative"}]}}, {"mark": {"type": "circle", "size": 10, "tooltip": {"content": "encoding"}}, "encoding": {"x": {"aggregate": "max", "field": "step", "type": "quantitative", "title": "step"}, "y": {"aggregate": {"argmax": "step"}, "field": "epochs", "type": "quantitative", "title": "epochs", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}}}]};
+            vegaEmbed('#static_model_config_trainer_epochs', spec);
+        </script>
+    </div>
+    
+
+    <div id = "static_model_config_trainer_batch_size">
+        <script type = "text/javascript">
+            var spec = {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "data": {"values": [{"step": "0", "batch_size": "0.48735082184455036", "rev": "workspace"}, {"step": "1", "batch_size": "1.8925951860771097", "rev": "workspace"}, {"step": "2", "batch_size": "2.4229776913590984", "rev": "workspace"}, {"step": "3", "batch_size": "3.0389857684867176", "rev": "workspace"}, {"step": "4", "batch_size": "4.869196744364517", "rev": "workspace"}]}, "title": "model/config/trainer/batch_size", "width": 300, "height": 300, "params": [{"name": "smooth", "value": 0.001, "bind": {"input": "range", "min": 0.001, "max": 1, "step": 0.001}}], "layer": [{"mark": "line", "encoding": {"x": {"field": "step", "type": "quantitative", "title": "step"}, "y": {"field": "batch_size", "type": "quantitative", "title": "batch_size", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}, "tooltip": [{"field": "step", "title": "step", "type": "quantitative"}, {"field": "batch_size", "title": "batch_size", "type": "quantitative"}]}, "transform": [{"loess": "batch_size", "on": "step", "groupby": ["rev", "filename", "field", "filename::field"], "bandwidth": {"signal": "smooth"}}]}, {"mark": {"type": "line", "opacity": 0.2}, "encoding": {"x": {"field": "step", "type": "quantitative", "title": "step"}, "y": {"field": "batch_size", "type": "quantitative", "title": "batch_size", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}, "tooltip": [{"field": "step", "title": "step", "type": "quantitative"}, {"field": "batch_size", "title": "batch_size", "type": "quantitative"}]}}, {"mark": {"type": "circle", "size": 10, "tooltip": {"content": "encoding"}}, "encoding": {"x": {"aggregate": "max", "field": "step", "type": "quantitative", "title": "step"}, "y": {"aggregate": {"argmax": "step"}, "field": "batch_size", "type": "quantitative", "title": "batch_size", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}}}]};
+            vegaEmbed('#static_model_config_trainer_batch_size', spec);
+        </script>
+    </div>
+    
+</body>
+</html>
