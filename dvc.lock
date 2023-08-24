@@ -45,3 +45,23 @@ stages:
       md5: 1676eba2572e7a52bc8ed838124b569a.dir
       size: 339
       nfiles: 3
+  train:
+    cmd: python train.py
+    deps:
+    - path: train.py
+      hash: md5
+      md5: dc03d79a6c1516609642095618ee7958
+      size: 336
+    params:
+      params.yaml:
+        epochs: 5
+    outs:
+    - path: newexp/metrics.json
+      hash: md5
+      md5: 174968262609a61ef67666f406378a86
+      size: 78
+    - path: newexp/plots
+      hash: md5
+      md5: 8be81d46ab41557c9012e33b886061af.dir
+      size: 221
+      nfiles: 2

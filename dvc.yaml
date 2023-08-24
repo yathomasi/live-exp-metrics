@@ -1,13 +1,15 @@
 stages:
-  test-dvclive:
+  train:
     cmd: python train.py
+    deps:
+      - train.py
     params:
       - epochs
     plots:
-      - dvclive/plots:
+      - newexp/plots:
           cache: false
     metrics:
-      - dvclive/metrics.json:
+      - newexp/metrics.json:
           cache: false
 
   usage-commands:
